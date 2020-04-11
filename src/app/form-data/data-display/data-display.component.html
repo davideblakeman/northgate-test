@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Saved Data</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngIf="formData.firstName" fxLayoutAlign="space-between">
+      <span>First Name: </span>{{ formData.firstName }}
+    </p>
+    <p *ngIf="formData.lastName" fxLayoutAlign="space-between">
+      <span>Last Name: </span>{{ formData.lastName }}
+    </p>
+    <p *ngIf="formData.dOB" fxLayoutAlign="space-between">
+      <span>Date Of Birth: </span>{{ formData.dOB | date: 'yyyy-M-d' }}
+    </p>
+    <p *ngIf="formData.favMeal" fxLayoutAlign="space-between">
+      <span>Favourite meal: </span>{{ formData.favMeal }}
+    </p>
+    <p *ngIf="formData.personality" fxLayoutAlign="space-between">
+      <span>Personality: </span>{{ formData.personality }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="end">
+    <button mat-button mat-raised-button color="warn" (click)="onClear()">
+      CLEAR
+    </button>
+  </mat-card-actions>
+</mat-card>

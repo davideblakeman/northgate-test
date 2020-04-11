@@ -1,0 +1,15 @@
+p > span {
+  font-weight: bold;
+}
+
+.mat-card-header .mat-card-title {
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+.mat-card {
+  max-width: 350px;
+  @media only screen and (max-width: 959px) {
+    max-width: 772px;
+  }
+}

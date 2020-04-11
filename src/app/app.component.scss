@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+
+mat-sidenav-container {
+  width: 100%;
+  height: calc(100vh - 64px); // minus the height of mat-toolbar
+}
+
+mat-toolbar > mat-toolbar-row > span {
+  color: mat-color($mat-grey, 100);
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: mat-color($mat-grey, 100);
+  }
+}

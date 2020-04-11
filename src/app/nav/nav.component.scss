@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+ul {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.active button {
+  color: mat-color($mat-red, 500);
+}
