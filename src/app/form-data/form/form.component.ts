@@ -30,6 +30,7 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     this.data.formChanged.next(this.form.value);
+    this.data.setForm(this.form.value);
   }
 
   onReset() {

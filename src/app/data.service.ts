@@ -31,4 +31,8 @@ export class DataService {
     this.form = this.initFormValues;
     this.formChanged.next(this.form);
   }
+
+  setForm(form: FormData) {
+    this.form = form;
+  }
 }
