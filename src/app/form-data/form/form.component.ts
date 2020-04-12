@@ -17,23 +17,26 @@ export class FormComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.formData = this.data.form;
+    this.formData = this.data.initFormValues;
+    this.initForm();
+  }
 
+  initForm() {
     this.form = new FormGroup({
-      firstName: new FormControl(this.formData.firstName, Validators.required),
-      lastName: new FormControl(this.formData.lastName, Validators.required),
+      firstName: new FormControl(null, Validators.required),
+      lastName: new FormControl(null, Validators.required),
       dOB: new FormControl(this.formData.dOB),
-      favMeal: new FormControl(this.formData.favMeal),
-      personality: new FormControl(this.formData.personality),
+      favMeal: new FormControl(null),
+      personality: new FormControl(null),
     });
   }
 
   onSubmit() {
-    this.data.formChanged.next(this.form.value);
     this.data.setForm(this.form.value);
+    this.data.formChanged.next(this.form.value);
   }
 
   onReset() {
-    this.form.reset();
+    this.initForm();
   }
 }

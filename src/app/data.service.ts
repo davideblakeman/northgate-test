@@ -14,7 +14,7 @@ export interface FormData {
 export class DataService {
   form: FormData;
   formChanged = new Subject<FormData>();
-  initFormValues = {
+  readonly initFormValues = {
     firstName: '',
     lastName: '',
     dOB: '980730000000',

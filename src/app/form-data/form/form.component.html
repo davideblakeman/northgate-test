@@ -9,6 +9,7 @@
           <mat-form-field>
             <mat-label>First Name</mat-label>
             <input
+              type="text"
               formControlName="firstName"
               matInput
               placeholder="E.g. John"
@@ -19,6 +20,7 @@
           <mat-form-field>
             <mat-label>Last Name</mat-label>
             <input
+              type="text"
               formControlName="lastName"
               matInput
               placeholder="E.g. Smith"
@@ -29,6 +31,7 @@
           <mat-form-field>
             <mat-label>Date Of Birth</mat-label>
             <input
+              type="text"
               matInput
               value="{{ formData.dOB | date: 'yyyy-M-d' }}"
               disabled
