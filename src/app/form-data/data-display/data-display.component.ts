@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { DataService } from '../../data.service';
 import { FormData } from '../../data.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-data-display',
   templateUrl: './data-display.component.html',
   styleUrls: ['./data-display.component.scss'],
 })
-export class DataDisplayComponent implements OnInit {
+export class DataDisplayComponent implements OnInit, OnDestroy {
   formData: FormData;
   subscription: Subscription;
 
@@ -25,5 +26,9 @@ export class DataDisplayComponent implements OnInit {
 
   onClear() {
     this.data.clear();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
